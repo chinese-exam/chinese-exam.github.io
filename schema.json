@@ -1,0 +1,128 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "BlankContentBlock": {
+      "type": "object",
+      "properties": {
+        "type": { "const": "blank" }
+      },
+      "required": ["type"],
+      "additionalProperties": false
+    },
+    "ImageContentBlock": {
+      "type": "object",
+      "properties": {
+        "type": { "const": "image" },
+        "src": { "type": "string" },
+        "width": { "type": "number" },
+        "height": { "type": "number" },
+        "inline": { "type": "boolean" }
+      },
+      "required": ["type", "src", "width", "height"],
+      "additionalProperties": false
+    },
+    "ContentBlock": {
+      "anyOf": [
+        { "type": "string" },
+        { "$ref": "#/definitions/BlankContentBlock" },
+        { "$ref": "#/definitions/ImageContentBlock" },
+        { "type": "array", "items": { "$ref": "#/definitions/ContentBlock" } }
+      ]
+    },
+    "ChoiceOption": {
+      "type": "object",
+      "additionalProperties": { "$ref": "#/definitions/ContentBlock" }
+    },
+    "SingleChoiceContent": {
+      "type": "object",
+      "properties": {
+        "options": { "$ref": "#/definitions/ChoiceOption" }
+      },
+      "required": ["options"],
+      "additionalProperties": false
+    },
+    "MultipleChoiceContent": {
+      "type": "object",
+      "properties": {
+        "options": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/ChoiceOption" }
+        }
+      },
+      "required": ["options"],
+      "additionalProperties": false
+    },
+    "ClozeContent": {
+      "type": "object",
+      "properties": {
+        "options": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/ChoiceOption" }
+        }
+      },
+      "required": ["options"],
+      "additionalProperties": false
+    },
+    "QuestionContent": {
+      "anyOf": [
+        { "$ref": "#/definitions/SingleChoiceContent" },
+        { "$ref": "#/definitions/MultipleChoiceContent" },
+        { "$ref": "#/definitions/ClozeContent" }
+      ]
+    },
+    "Question": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "single_choice",
+            "multiple_choice",
+            "cloze",
+            "judgment",
+            "blank",
+            "matching",
+            "essay",
+            "coding",
+            "composite"
+          ]
+        },
+        "stem": { "$ref": "#/definitions/ContentBlock" },
+        "content": { "$ref": "#/definitions/QuestionContent" },
+        "answer": { "$ref": "#/definitions/ContentBlock" },
+        "score": { "type": "number" },
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "difficulty": { "type": "number" },
+        "analysis": { "$ref": "#/definitions/ContentBlock" },
+        "prompt": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "PaperSection": {
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "content": {},
+        "totalScore": { "type": "number" },
+        "totalQuestions": { "type": "number" },
+        "totalDuration": { "type": "number" },
+        "questions": { "type": "array", "items": { "$ref": "#/definitions/Question" } }
+      },
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "properties": {
+    "$schema": { "type": "string" },
+    "name": { "type": "string" },
+    "year": { "type": "number" },
+    "month": { "type": "number" },
+    "totalScore": { "type": "number" },
+    "totalQuestions": { "type": "number" },
+    "totalDuration": { "type": "number" },
+    "passingScore": { "type": "number" },
+    "sections": { "type": "array", "items": { "$ref": "#/definitions/PaperSection" } }
+  },
+  "additionalProperties": false
+}
