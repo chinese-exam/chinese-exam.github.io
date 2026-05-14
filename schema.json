@@ -107,7 +107,10 @@
         "totalScore": { "type": "number" },
         "totalQuestions": { "type": "number" },
         "totalDuration": { "type": "number" },
-        "questions": { "type": "array", "items": { "$ref": "#/definitions/Question" } }
+        "questions": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/Question" }
+        }
       },
       "additionalProperties": false
     }
@@ -122,7 +125,10 @@
     "totalQuestions": { "type": "number" },
     "totalDuration": { "type": "number" },
     "passingScore": { "type": "number" },
-    "sections": { "type": "array", "items": { "$ref": "#/definitions/PaperSection" } }
+    "sections": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/PaperSection" }
+    }
   },
   "additionalProperties": false
 }

@@ -1,0 +1,155 @@
+{
+  "name": "英文模拟考试 - 入门级",
+  "year": 2024,
+  "month": 5,
+  "totalScore": 100,
+  "totalQuestions": 10,
+  "totalDuration": 60,
+  "difficulty": "easy",
+  "subject": "english",
+  "sections": [
+    {
+      "title": "单选题",
+      "totalScore": 60,
+      "totalQuestions": 6,
+      "questions": [
+        {
+          "type": "single_choice",
+          "stem": "Which word is the opposite of 'hot'?",
+          "content": {
+            "options": {
+              "A": "warm",
+              "B": "cold",
+              "C": "cool",
+              "D": "freezing"
+            }
+          },
+          "answer": "B",
+          "score": 10,
+          "analysis": "The opposite of 'hot' is 'cold'. While 'cool' and 'freezing' are related to temperature, they don't directly mean the opposite."
+        },
+        {
+          "type": "single_choice",
+          "stem": "I ___ to the store yesterday.",
+          "content": {
+            "options": {
+              "A": "go",
+              "B": "goes",
+              "C": "went",
+              "D": "going"
+            }
+          },
+          "answer": "C",
+          "score": 10,
+          "analysis": "The sentence talks about a past event (yesterday), so we need the past tense. 'Went' is the past tense of 'go'."
+        },
+        {
+          "type": "single_choice",
+          "stem": "Which sentence is correct?",
+          "content": {
+            "options": {
+              "A": "She don't like apples.",
+              "B": "She doesn't like apples.",
+              "C": "She not like apples.",
+              "D": "She likes not apples."
+            }
+          },
+          "answer": "B",
+          "score": 10,
+          "analysis": "In English, with the third person singular (she), we use 'doesn't' for negation. The correct structure is 'she doesn't like'."
+        },
+        {
+          "type": "single_choice",
+          "stem": "What time ___ you usually wake up?",
+          "content": {
+            "options": {
+              "A": "does",
+              "B": "do",
+              "C": "did",
+              "D": "can"
+            }
+          },
+          "answer": "B",
+          "score": 10,
+          "analysis": "With 'you', we use 'do' in the simple present tense for questions. The answer is 'do'."
+        },
+        {
+          "type": "single_choice",
+          "stem": "She has ___ cat and ___ dog.",
+          "content": {
+            "options": {
+              "A": "a / a",
+              "B": "an / an",
+              "C": "a / an",
+              "D": "an / a"
+            }
+          },
+          "answer": "A",
+          "score": 10,
+          "analysis": "Before consonant sounds, we use 'a'. 'Cat' starts with a consonant sound, so 'a cat'. 'Dog' starts with a consonant sound, so 'a dog'. Answer: a/a."
+        },
+        {
+          "type": "single_choice",
+          "stem": "Which is spelled correctly?",
+          "content": {
+            "options": {
+              "A": "necesary",
+              "B": "necesary",
+              "C": "necessary",
+              "D": "neccessary"
+            }
+          },
+          "answer": "C",
+          "score": 10,
+          "analysis": "The correct spelling is 'necessary' - with one 'c' and two 's's. A useful mnemonic: one collar and two sleeves."
+        }
+      ]
+    },
+    {
+      "title": "填空题",
+      "totalScore": 30,
+      "totalQuestions": 3,
+      "questions": [
+        {
+          "type": "cloze",
+          "stem": "Complete the sentence: If I ___ a lot of money, I would travel around the world.",
+          "content": {},
+          "answer": "had",
+          "score": 10,
+          "analysis": "This is a conditional sentence (If clause). For hypothetical situations in present, we use 'had' (past tense) in the if-clause."
+        },
+        {
+          "type": "cloze",
+          "stem": "The teacher said that she ___ us tomorrow.",
+          "content": {},
+          "answer": "would teach",
+          "score": 10,
+          "analysis": "In reported speech, 'will teach' becomes 'would teach' when the main clause is in past tense."
+        },
+        {
+          "type": "cloze",
+          "stem": "After finishing breakfast, Tom ___ to school by bus.",
+          "content": {},
+          "answer": "goes",
+          "score": 10,
+          "analysis": "This describes a habitual action (routine), so we use the simple present tense 'goes'."
+        }
+      ]
+    },
+    {
+      "title": "读理解",
+      "totalScore": 10,
+      "totalQuestions": 1,
+      "questions": [
+        {
+          "type": "essay",
+          "stem": "Read the passage and answer: 'My name is John. I am a teacher. I work at a school in the city. I have 30 students in my class. I like my job very much.' - How many students does John have?",
+          "content": {},
+          "answer": "30 students",
+          "score": 10,
+          "analysis": "According to the passage, John clearly states 'I have 30 students in my class.' The answer is 30 students."
+        }
+      ]
+    }
+  ]
+}

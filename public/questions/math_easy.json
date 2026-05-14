@@ -1,0 +1,155 @@
+{
+  "name": "数学模拟考试 - 入门级",
+  "year": 2024,
+  "month": 5,
+  "totalScore": 100,
+  "totalQuestions": 10,
+  "totalDuration": 60,
+  "difficulty": "easy",
+  "subject": "math",
+  "sections": [
+    {
+      "title": "选择题",
+      "totalScore": 60,
+      "totalQuestions": 6,
+      "questions": [
+        {
+          "type": "single_choice",
+          "stem": "计算：3 + 5 × 2 的结果是？",
+          "content": {
+            "options": {
+              "A": "16",
+              "B": "13",
+              "C": "18",
+              "D": "15"
+            }
+          },
+          "answer": "B",
+          "score": 10,
+          "analysis": "根据四则运算法则，先乘除后加减。5 × 2 = 10，3 + 10 = 13。"
+        },
+        {
+          "type": "single_choice",
+          "stem": "下列哪个是方程 2x + 3 = 9 的解？",
+          "content": {
+            "options": {
+              "A": "x = 2",
+              "B": "x = 3",
+              "C": "x = 4",
+              "D": "x = 5"
+            }
+          },
+          "answer": "B",
+          "score": 10,
+          "analysis": "解方程：2x + 3 = 9，2x = 6，x = 3。验证：2(3) + 3 = 9 ✓"
+        },
+        {
+          "type": "single_choice",
+          "stem": "一个三角形的三个内角分别是 30°、60° 和多少度？",
+          "content": {
+            "options": {
+              "A": "60°",
+              "B": "75°",
+              "C": "90°",
+              "D": "120°"
+            }
+          },
+          "answer": "C",
+          "score": 10,
+          "analysis": "三角形内角和为 180°。30° + 60° + ? = 180°，所以 ? = 90°。"
+        },
+        {
+          "type": "single_choice",
+          "stem": "正方形的对角线长度是 4cm，则正方形的边长是？",
+          "content": {
+            "options": {
+              "A": "2cm",
+              "B": "2√2 cm",
+              "C": "4cm",
+              "D": "2√3 cm"
+            }
+          },
+          "answer": "B",
+          "score": 10,
+          "analysis": "设正方形边长为 a，则对角线 = a√2。已知对角线 = 4，所以 a√2 = 4，a = 2√2。"
+        },
+        {
+          "type": "single_choice",
+          "stem": "圆的半径为 3cm，则其面积是？",
+          "content": {
+            "options": {
+              "A": "6π cm²",
+              "B": "9π cm²",
+              "C": "12π cm²",
+              "D": "18π cm²"
+            }
+          },
+          "answer": "B",
+          "score": 10,
+          "analysis": "圆的面积 = πr²。当 r = 3 时，面积 = π × 3² = 9π cm²。"
+        },
+        {
+          "type": "single_choice",
+          "stem": "下列数中，哪个是无理数？",
+          "content": {
+            "options": {
+              "A": "0.5",
+              "B": "√4",
+              "C": "√5",
+              "D": "-3"
+            }
+          },
+          "answer": "C",
+          "score": 10,
+          "analysis": "无理数是无限不循环小数。A 是有理数，B = 2 是有理数，D 是有理数，C = √5 是无理数。"
+        }
+      ]
+    },
+    {
+      "title": "填空题",
+      "totalScore": 30,
+      "totalQuestions": 3,
+      "questions": [
+        {
+          "type": "cloze",
+          "stem": "计算：(-2)² × 3 - 5 = _____",
+          "content": {},
+          "answer": "7",
+          "score": 10,
+          "analysis": "(-2)² = 4，4 × 3 = 12，12 - 5 = 7。"
+        },
+        {
+          "type": "cloze",
+          "stem": "求解：如果 x² = 16，则 x = ___",
+          "content": {},
+          "answer": "4 或 -4",
+          "score": 10,
+          "analysis": "当 x² = 16 时，x = ±4，即 x = 4 或 x = -4。"
+        },
+        {
+          "type": "cloze",
+          "stem": "平行四边形的两条邻边分别为 5cm 和 3cm，其周长为 ___cm",
+          "content": {},
+          "answer": "16",
+          "score": 10,
+          "analysis": "平行四边形周长 = 2 × (5 + 3) = 16cm。"
+        }
+      ]
+    },
+    {
+      "title": "解答题",
+      "totalScore": 10,
+      "totalQuestions": 1,
+      "questions": [
+        {
+          "type": "essay",
+          "stem": "小明买了 5 本书，每本 8 元，又买了 3 支笔，每支 2 元。求小明一共花了多少钱？（需要写出计算过程）",
+          "content": {},
+          "answer": "购买书籍费用：5 × 8 = 40 元; 购买笔的费用：3 × 2 = 6 元; 总费用：40 + 6 = 46 元; 答：小明一共花了 46 元。",
+          "score": 10,
+          "analysis": "这是一道应用题，考查两步乘法和加法运算。关键是理清题目的条件和所求。"
+        }
+      ]
+    }
+  ]
+}
