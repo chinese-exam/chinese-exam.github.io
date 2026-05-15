@@ -21,11 +21,27 @@
       "required": ["type", "src", "width", "height"],
       "additionalProperties": false
     },
+    "MathContentBlock": {
+      "type": "object",
+      "properties": {
+        "type": { "const": "math" },
+        "expression": {
+          "anyOf": [
+            { "type": "string" },
+            { "type": "array", "items": { "type": "string" } }
+          ]
+        },
+        "inline": { "type": "boolean" }
+      },
+      "required": ["type", "expression"],
+      "additionalProperties": false
+    },
     "ContentBlock": {
       "anyOf": [
         { "type": "string" },
         { "$ref": "#/definitions/BlankContentBlock" },
         { "$ref": "#/definitions/ImageContentBlock" },
+        { "$ref": "#/definitions/MathContentBlock" },
         { "type": "array", "items": { "$ref": "#/definitions/ContentBlock" } }
       ]
     },
