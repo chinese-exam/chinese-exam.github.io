@@ -1,0 +1,3 @@
+[submodule "public/exams/gaokao"]
+	path = public/exams/gaokao
+	url = https://github.com/chinese-exam/gaokao.git

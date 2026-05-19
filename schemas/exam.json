@@ -1,0 +1,153 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "BlankContentBlock": {
+      "type": "object",
+      "properties": {
+        "type": { "const": "blank" }
+      },
+      "required": ["type"],
+      "additionalProperties": false
+    },
+    "BreakContentBlock": {
+      "type": "object",
+      "properties": {
+        "type": { "const": "break" }
+      },
+      "required": ["type"],
+      "additionalProperties": false
+    },
+    "ImageContentBlock": {
+      "type": "object",
+      "properties": {
+        "type": { "const": "image" },
+        "src": { "type": "string" },
+        "width": { "type": "number" },
+        "height": { "type": "number" },
+        "inline": { "type": "boolean" }
+      },
+      "required": ["type", "src", "width", "height"],
+      "additionalProperties": false
+    },
+    "MathContentBlock": {
+      "type": "object",
+      "properties": {
+        "type": { "const": "math" },
+        "expression": { "type": "string" },
+        "inline": { "type": "boolean" }
+      },
+      "required": ["type", "expression"],
+      "additionalProperties": false
+    },
+    "ContentBlock": {
+      "anyOf": [
+        { "type": "string" },
+        { "$ref": "#/definitions/BlankContentBlock" },
+        { "$ref": "#/definitions/BreakContentBlock" },
+        { "$ref": "#/definitions/ImageContentBlock" },
+        { "$ref": "#/definitions/MathContentBlock" },
+        { "type": "array", "items": { "$ref": "#/definitions/ContentBlock" } }
+      ]
+    },
+    "ChoiceOption": {
+      "type": "object",
+      "additionalProperties": { "$ref": "#/definitions/ContentBlock" }
+    },
+    "SingleChoiceContent": {
+      "type": "object",
+      "properties": {
+        "options": { "$ref": "#/definitions/ChoiceOption" }
+      },
+      "required": ["options"],
+      "additionalProperties": false
+    },
+    "MultipleChoiceContent": {
+      "type": "object",
+      "properties": {
+        "options": { "$ref": "#/definitions/ChoiceOption" }
+      },
+      "required": ["options"],
+      "additionalProperties": false
+    },
+    "ClozeContent": {
+      "type": "object",
+      "properties": {
+        "options": { "$ref": "#/definitions/ChoiceOption" }
+      },
+      "additionalProperties": false
+    },
+    "QuestionContent": {
+      "anyOf": [
+        { "$ref": "#/definitions/SingleChoiceContent" },
+        { "$ref": "#/definitions/MultipleChoiceContent" },
+        { "$ref": "#/definitions/ClozeContent" },
+        { "type": "object" }
+      ]
+    },
+    "Question": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "single_choice",
+            "multiple_choice",
+            "cloze",
+            "judgment",
+            "blank",
+            "matching",
+            "essay",
+            "coding",
+            "composite"
+          ]
+        },
+        "stem": { "$ref": "#/definitions/ContentBlock" },
+        "content": { "$ref": "#/definitions/QuestionContent" },
+        "answer": { "$ref": "#/definitions/ContentBlock" },
+        "score": { "type": "number" },
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "difficulty": { "type": "number" },
+        "analysis": { "$ref": "#/definitions/ContentBlock" },
+        "prompt": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "ExamSection": {
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "questions": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/Question" }
+        },
+        "questionsCount": { "type": "number" },
+        "scorePerQuestion": { "type": "number" }
+      },
+      "required": ["title", "questions", "questionsCount"],
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "properties": {
+    "$schema": { "type": "string" },
+    "id": { "type": "string" },
+    "name": { "type": "string" },
+    "description": { "type": "string" },
+    "type": { "enum": ["fixed", "dynamic"] },
+    "totalScore": { "type": "number" },
+    "totalDuration": { "type": "number" },
+    "passingScore": { "type": "number" },
+    "papers": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    },
+    "sections": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/ExamSection" }
+    },
+    "icon": { "type": "string" }
+  },
+  "required": ["id", "name", "type", "totalScore", "totalDuration", "passingScore"],
+  "additionalProperties": false
+}

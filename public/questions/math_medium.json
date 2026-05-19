@@ -1,0 +1,108 @@
+{
+  "name": "数学模拟考试 - 提升级 (含多媒体)",
+  "year": 2024,
+  "month": 5,
+  "totalScore": 100,
+  "totalQuestions": 5,
+  "totalDuration": 45,
+  "difficulty": "medium",
+  "subject": "math",
+  "sections": [
+    {
+      "title": "选择题",
+      "totalScore": 60,
+      "totalQuestions": 3,
+      "questions": [
+        {
+          "type": "single_choice",
+          "stem": [
+            "已知函数 ",
+            { "type": "math", "expression": "f(x) = ax^2 + bx + c", "inline": true },
+            " 的图象如图所示，则下列结论正确的是？"
+          ],
+          "content": {
+            "options": {
+              "A": { "type": "math", "expression": "a > 0, b < 0, c > 0", "inline": true },
+              "B": { "type": "math", "expression": "a < 0, b > 0, c < 0", "inline": true },
+              "C": { "type": "math", "expression": "a < 0, b < 0, c > 0", "inline": true },
+              "D": { "type": "math", "expression": "a > 0, b > 0, c < 0", "inline": true }
+            }
+          },
+          "answer": "C",
+          "score": 20,
+          "analysis": "由图象开口向下可知 a < 0；由对称轴在 y 轴左侧可知 -b/2a < 0，即 b < 0；由图象与 y 轴交点在正半轴可知 c > 0。"
+        },
+        {
+          "type": "single_choice",
+          "stem": [
+            "计算下列定积分的值：",
+            { "type": "math", "expression": "\\int_{0}^{\\pi} \\sin(x) dx", "inline": false }
+          ],
+          "content": {
+            "options": {
+              "A": "0",
+              "B": "1",
+              "C": "2",
+              "D": "π"
+            }
+          },
+          "answer": "C",
+          "score": 20,
+          "analysis": "积分结果为 [-cos(x)] 从 0 到 π，即 -cos(π) - (-cos(0)) = 1 + 1 = 2。"
+        },
+        {
+          "type": "single_choice",
+          "stem": [
+            "观察下图中的几何体，其主视图是？",
+            { "type": "image", "src": "https://placehold.co/400x200.png?text=3D+Geometry+Shape", "width": 400, "height": 200, "inline": false }
+          ],
+          "content": {
+            "options": {
+              "A": "三角形",
+              "B": "矩形",
+              "C": "圆形",
+              "D": "梯形"
+            }
+          },
+          "answer": "B",
+          "score": 20,
+          "analysis": "根据几何体的形状，从正面观察得到的投影为矩形。"
+        }
+      ]
+    },
+    {
+      "title": "填空题",
+      "totalScore": 20,
+      "totalQuestions": 1,
+      "questions": [
+        {
+          "type": "cloze",
+          "stem": [
+            "勾股定理是指在直角三角形中，两条直角边的平方和等于斜边的平方。即：",
+            { "type": "math", "expression": "a^2 + b^2 =", "inline": true },
+            { "type": "blank" }
+          ],
+          "content": {},
+          "answer": "c^2",
+          "score": 20,
+          "analysis": "这是基础的勾股定理表达式。"
+        }
+      ]
+    },
+    {
+      "title": "简答题",
+      "totalScore": 20,
+      "totalQuestions": 1,
+      "questions": [
+        {
+          "type": "essay",
+          "stem": "请证明：对于任意实数 x，恒有 sin^2(x) + cos^2(x) = 1。",
+          "content": {},
+          "answer": "利用单位圆定义，圆上任意一点的坐标为 (cos x, sin x)，该点到原点的距离平方为 1，即 cos^2 x + sin^2 x = 1。",
+          "score": 20,
+          "analysis": "考查三角恒等式的基本性质。"
+        }
+      ]
+    }
+  ]
+}

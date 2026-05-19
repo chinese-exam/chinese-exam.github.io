@@ -1,0 +1,65 @@
+{
+  "name": "全题型功能测试卷",
+  "year": 2024,
+  "month": 5,
+  "totalScore": 100,
+  "totalQuestions": 4,
+  "totalDuration": 30,
+  "difficulty": "medium",
+  "subject": "math",
+  "sections": [
+    {
+      "title": "客观题测试",
+      "totalScore": 100,
+      "totalQuestions": 4,
+      "questions": [
+        {
+          "type": "single_choice",
+          "stem": "这是单选题测试：1 + 1 = ?",
+          "content": {
+            "options": {
+              "A": "1",
+              "B": "2",
+              "C": "3",
+              "D": "4"
+            }
+          },
+          "answer": "B",
+          "score": 25,
+          "analysis": "基础加法：1 + 1 = 2。"
+        },
+        {
+          "type": "multiple_choice",
+          "stem": "这是多选题测试：以下哪些是偶数？",
+          "content": {
+            "options": {
+              "A": "2",
+              "B": "4",
+              "C": "5",
+              "D": "8"
+            }
+          },
+          "answer": ["A", "B", "D"],
+          "score": 25,
+          "analysis": "偶数是可以被 2 整除的整数，包括 2, 4, 8。"
+        },
+        {
+          "type": "judgment",
+          "stem": "这是判断题测试：π 是一个有理数。",
+          "content": {},
+          "answer": "错误",
+          "score": 25,
+          "analysis": "π 是一个无限不循环小数，属于无理数。"
+        },
+        {
+          "type": "cloze",
+          "stem": "这是填空题测试：勾股定理 a² + b² = ___",
+          "content": {},
+          "answer": "c²",
+          "score": 25,
+          "analysis": "直角三角形中两条直角边的平方和等于斜边的平方。"
+        }
+      ]
+    }
+  ]
+}

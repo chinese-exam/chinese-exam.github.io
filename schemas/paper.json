@@ -9,6 +9,14 @@
       "required": ["type"],
       "additionalProperties": false
     },
+    "BreakContentBlock": {
+      "type": "object",
+      "properties": {
+        "type": { "const": "break" }
+      },
+      "required": ["type"],
+      "additionalProperties": false
+    },
     "ImageContentBlock": {
       "type": "object",
       "properties": {
@@ -25,12 +33,7 @@
       "type": "object",
       "properties": {
         "type": { "const": "math" },
-        "expression": {
-          "anyOf": [
-            { "type": "string" },
-            { "type": "array", "items": { "type": "string" } }
-          ]
-        },
+        "expression": { "type": "string" },
         "inline": { "type": "boolean" }
       },
       "required": ["type", "expression"],
@@ -40,6 +43,7 @@
       "anyOf": [
         { "type": "string" },
         { "$ref": "#/definitions/BlankContentBlock" },
+        { "$ref": "#/definitions/BreakContentBlock" },
         { "$ref": "#/definitions/ImageContentBlock" },
         { "$ref": "#/definitions/MathContentBlock" },
         { "type": "array", "items": { "$ref": "#/definitions/ContentBlock" } }
@@ -60,10 +64,7 @@
     "MultipleChoiceContent": {
       "type": "object",
       "properties": {
-        "options": {
-          "type": "array",
-          "items": { "$ref": "#/definitions/ChoiceOption" }
-        }
+        "options": { "$ref": "#/definitions/ChoiceOption" }
       },
       "required": ["options"],
       "additionalProperties": false
@@ -71,19 +72,16 @@
     "ClozeContent": {
       "type": "object",
       "properties": {
-        "options": {
-          "type": "array",
-          "items": { "$ref": "#/definitions/ChoiceOption" }
-        }
+        "options": { "$ref": "#/definitions/ChoiceOption" }
       },
-      "required": ["options"],
       "additionalProperties": false
     },
     "QuestionContent": {
       "anyOf": [
         { "$ref": "#/definitions/SingleChoiceContent" },
         { "$ref": "#/definitions/MultipleChoiceContent" },
-        { "$ref": "#/definitions/ClozeContent" }
+        { "$ref": "#/definitions/ClozeContent" },
+        { "type": "object" }
       ]
     },
     "Question": {
